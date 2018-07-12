@@ -3,12 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "chart.js": "^2.7.2",
     "express": "^4.16.3",
+    "moment": "^2.22.1",
     "node-fetch": "^2.1.2",
+    "nodemon": "^1.17.5",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
+    "react-rangeslider": "^2.2.0",
     "react-redux": "^5.0.7",
     "react-scripts": "1.1.4",
+    "react-spinners": "^0.3.2",
     "redux": "^4.0.0"
   },
   "scripts": {
@@ -17,5 +23,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:5000"
+  "proxy": "http://localhost:5000",
+  "devDependencies": {
+    "react-chartjs-2": "^2.7.2"
+  }
 }

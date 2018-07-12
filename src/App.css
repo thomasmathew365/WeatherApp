@@ -1,28 +1,231 @@
 .App {
   text-align: center;
+  position: relative;
+  height: 100vh;
+  transition: all 0.2s ease-in-out;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+#portal {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.rangeslider-horizontal .rangeslider__handle {
+  width: 10px;
+  height: 30px;
+  border-radius: 0px;
+  top: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
 }
 
-.App-title {
-  font-size: 1.5em;
+.rangeslider .rangeslider__handle {
+  background: #fff;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  display: inline-block;
+  position: absolute;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 -1px 3px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 -1px 3px rgba(0, 0, 0, 0.4);
 }
 
-.App-intro {
-  font-size: large;
+.rangeslider-horizontal .rangeslider__handle:after {
+  content: ' ';
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  top: 6px;
+  left: 6px;
+  border-radius: 50%;
+  background-color: #dadada;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) inset, 0 -1px 3px rgba(0, 0, 0, 0.4) inset;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) inset, 0 -1px 3px rgba(0, 0, 0, 0.4) inset;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.slider {
+  padding: 5px 40px;
+}
+
+.temp-p {
+  font-size: 72px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.background00 {
+  background: #191970;
+  color: #ffffff;
+}
+
+.background01 {
+  background: #191970;
+  color: #ffffff;
+}
+
+.background02 {
+  background: #7d7dae;
+  color: #ffffff;
+}
+
+.background03 {
+  background: #7d7dae;
+  color: #ffffff;
+}
+
+.background04 {
+  background: #87ceeb;
+  color: #ffffff;
+}
+
+.background05 {
+  background: #87ceeb;
+  color: #ffffff;
+}
+
+.background06 {
+  background: #87ceeb;
+  color: #ffffff;
+}
+
+.background07 {
+  background: #87ceeb;
+  color: #ffffff;
+}
+
+.background08 {
+  background: #87ceeb;
+  color: #ffffff;
+}
+
+.background09 {
+  background: #87ceeb;
+  color: #ffffff;
+}
+
+.background10 {
+  background: #87ceeb;
+  color: #ffffff;
+}
+
+.background11 {
+  background: #87ceeb;
+  color: #ffffff;
+}
+
+.background12 {
+  background: #87cefa;
+  color: #ffffff;
+}
+
+.background13 {
+  background: #87cefa;
+  color: #ffffff;
+}
+
+.background14 {
+  background: #87cefa;
+  color: #ffffff;
+}
+
+.background15 {
+  background: #87cefa;
+  color: #ffffff;
+}
+
+.background16 {
+  background: #87ceeb;
+  color: #ffffff;
+}
+
+.background17 {
+  background: #7d7dae;
+  color: #ffffff;
+}
+
+.background18 {
+  background: #7d7dae;
+  color: #ffffff;
+}
+
+.background19 {
+  background: #46468c;
+  color: #ffffff;
+}
+
+.background20 {
+  background: #191970;
+  color: #ffffff;
+}
+
+.background21 {
+  background: #191970;
+  color: #ffffff;
+}
+
+.background22 {
+  background: #191970;
+  color: #ffffff;
+}
+
+.background23 {
+  background: #191970;
+  color: #ffffff;
+}
+
+.gradient-bg {
+  height: 100vh;
+  padding-top: 100px;
+  background: -moz-linear-gradient( bottom, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 0) 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient( bottom, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 0) 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient( to top, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 0) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00ffffff', GradientType=0);
+  /* IE6-9 */
+}
+
+.custom-modal {
+  padding: 100px;
+  background-color:rgba(255,255,255,0.5);
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.2);
+  border-radius: .3rem;
+  outline: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.temp-loading {
+  height: 200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 800px) {
+  .app-cont {
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    flex-flow: row;
+  }
+  .gradient-bg {
+    padding-top: 10px;
+  }
+  .data-cont {
+    margin-top: 100px;
+  }
+  .rangeslider-vertical {
+    height: 80vh;
+    margin-top: auto;
+  }
 }

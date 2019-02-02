@@ -20,19 +20,33 @@ dataHandler.prototype.fetchAllData = (req, res) => {
   let fetchForeCastURL = `http://api.openweathermap.org/data/2.5/forecast?lat=${
     req.query.lat
   }&lon=${req.query.lng}&cnt=9&appid=${apiKey}`;
-  let urlList = [fetchCurrentURL, fetchForeCastURL];
+  let urlList = [fetchCurrentURL, fetchForeCastURL];  
   let promiseList = urlList.map(url => fetch(url));
   Promise.all(promiseList).then(results => {
     Promise.all(results.map(res => res.json())).then(data => {
-      let resData = {};
+      let resData = {};      
       resData.currentWeather = data[0];
-      resData.hourlyList = data[1];
+      resData.hourlyList = data[1];      
       res.send(extractJson(resData));
     });
   });
 };
 
+dataHandler.prototype.fetchWeekData = (req, res) => {
+  var self = this;
+  let fetchForeCastURL = `http://api.openweathermap.org/data/2.5/forecast/daily?lat=${
+    req.query.lat
+  }&lon=${req.query.lng}&cnt=9&appid=${apiKey}`;  
+  fetch(fetchForeCastURL).then(results => {
+      let resData = {};
+      resData.weeklyWeather = results;
+      res.send(resData);
+
+  });
+};
+
 let extractJson = data => {
+  
   var hoursList = {};
   for (let i = 0; i < 9; i++) {
     let timeSecs = data['hourlyList'].list[i].dt;
@@ -86,10 +100,11 @@ let getPredictedDataModel = (type, data1, data2) => {
         : convert2pointsto4(data1.temp, data2.temp)[2],
     weatherMain: type == 'first' ? data1.weatherMain : data2.weatherMain,
     weatherDescription: type == 'first' ? data1.weatherDescription : data2.weatherDescription,
+    weatherCode: type == 'first' ? data1.weatherCode : data2.weatherCode,
     windSpeed:
       type == 'first'
         ? convert2pointsto4(data1.windSpeed, data2.windSpeed)[1]
-        : convert2pointsto4(data1.windSpeed, data2.windSpeed)[2]
+        : convert2pointsto4(data1.windSpeed, data2.windSpeed)[2],
   };
 };
 
@@ -100,6 +115,7 @@ let getDataModel = data => {
     temp: data.main.temp,
     weatherMain: data.weather[0].main,
     weatherDescription: data.weather[0].description,
+    weatherCode: data.weather[0].id,
     windSpeed: data.wind.speed
   };
 };

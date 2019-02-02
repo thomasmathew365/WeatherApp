@@ -5,17 +5,25 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "chart.js": "^2.7.2",
+    "classnames": "^2.2.6",
     "express": "^4.16.3",
     "moment": "^2.22.1",
     "node-fetch": "^2.1.2",
-    "nodemon": "^1.17.5",
+    "nodemon": "^1.18.9",
     "react": "^16.4.0",
+    "react-autobind": "^1.0.6",
     "react-dom": "^16.4.0",
+    "react-geosuggest": "^2.10.0",
     "react-rangeslider": "^2.2.0",
     "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
     "react-spinners": "^0.3.2",
-    "redux": "^4.0.0"
+    "react-spring": "^7.2.10",
+    "react-table": "^6.9.0",
+    "react-tabs": "^3.0.0",
+    "redux": "^4.0.0",
+    "unsplash-js": "^4.8.0"
   },
   "scripts": {
     "start": "react-scripts start",

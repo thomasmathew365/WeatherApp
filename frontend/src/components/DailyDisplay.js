@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
-import { RotateLoader } from 'react-spinners';
+// import { RotateLoader } from 'react-spinners';
+import RotateLoader from "react-spinners/RotateLoader";
 import Slider from 'react-rangeslider';
 import { animated, Transition, Spring } from 'react-spring'
 
@@ -40,10 +41,11 @@ const DailyDisplay = (props) => {
         if (props.context.loading) {
             return (
                 <div className='temp-loading'>
-                    <RotateLoader
+                    {/* <RotateLoader
                         color={'#ffffff'}
                         loading={props.context.loading}
-                    />
+                    /> */}
+                    <div>Loading.....</div>
                 </div>
             );
         }

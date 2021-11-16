@@ -2,7 +2,8 @@ import React, { Component, Fragment } from 'react';
 import tools from './tools';
 import 'react-rangeslider/lib/index.css';
 import './App.css';
-import Unsplash, { toJson } from 'unsplash-js';
+// import Unsplash, { toJson } from 'unsplash-js';
+import { createApi } from 'unsplash-js';
 import DailyDisplay from './components/DailyDisplay';
 import WeeklyChart from './components/WeeklyChart';
 import { AppContextProvider } from './AppContext';
@@ -18,11 +19,9 @@ const cx = classnames.bind(style);
 
 const moment = require('moment');
 
-const unsplash = new Unsplash({
-    applicationId: "371e9581176ca952b6c04f266b35d1e8fd50d4397df9b884b0f4acaabe2d9ab2",
-    secret: "898c8cbb8ca90abfd5aef4a8fd84f3e254f6f6302cf04730596322de0075a62d",
-    callbackUrl: ""
-});
+const unsplash = createApi({
+    accessKey: process.env.REACT_APP_UNSPLASH_ACCESS,
+  });
 
 
 class MainPage extends Component {
@@ -33,10 +32,15 @@ class MainPage extends Component {
 
     componentDidMount() {
         let self = this;
-        unsplash.photos.getRandomPhoto()
-            .then(toJson)
-            .then(json => {
-                self.props.context.setContextBgImgUrl(json.urls.regular);
+        const ctx = this.props.context;
+        const { data: {cityName}} = ctx;
+
+        console.log(process.env);
+        unsplash.photos.getRandom({
+            count: 1,
+            collectionIds: ['11649432'],
+          }).then(res => {
+                self.props.context.setContextBgImgUrl(res.response[0].urls.regular);
             })
             .catch(err => { console.log(err) })
         window.addEventListener('resize', this.updateDimensions.bind(this));

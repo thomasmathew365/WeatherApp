@@ -9,7 +9,7 @@
     "express": "^4.16.3",
     "moment": "^2.22.1",
     "node-fetch": "^2.1.2",
-    "nodemon": "^1.18.9",
+    "nodemon": "^2.0.15",
     "react": "^16.4.0",
     "react-autobind": "^1.0.6",
     "react-dom": "^16.4.0",
@@ -17,13 +17,13 @@
     "react-rangeslider": "^2.2.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.4",
-    "react-spinners": "^0.3.2",
+    "react-scripts": "^4.0.3",
+    "react-spinners": "^0.11.0",
     "react-spring": "^7.2.10",
     "react-table": "^6.9.0",
     "react-tabs": "^3.0.0",
     "redux": "^4.0.0",
-    "unsplash-js": "^4.8.0"
+    "unsplash-js": "^7.0.15"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -34,5 +34,17 @@
   "proxy": "http://localhost:5000",
   "devDependencies": {
     "react-chartjs-2": "^2.7.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

@@ -34,8 +34,6 @@ class MainPage extends Component {
         let self = this;
         const ctx = this.props.context;
         const { data: {cityName}} = ctx;
-
-        console.log(process.env);
         unsplash.photos.getRandom({
             count: 1,
             collectionIds: ['11649432'],
@@ -48,6 +46,8 @@ class MainPage extends Component {
 
     async componentWillMount() {
         let loc = await tools.getLocation();
+        console.log("🚀 ~ file: MainPage.js ~ line 49 ~ MainPage ~ componentWillMount ~ loc", loc)
+        
         this.props.context.setContextCurrentLocation(loc);
         this.fetchAndSetWeather();
     }

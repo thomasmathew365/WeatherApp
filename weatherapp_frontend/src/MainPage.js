@@ -45,9 +45,7 @@ class MainPage extends Component {
     }
 
     async componentWillMount() {
-        let loc = await tools.getLocation();
-        console.log("🚀 ~ file: MainPage.js ~ line 49 ~ MainPage ~ componentWillMount ~ loc", loc)
-        
+        let loc = await tools.getLocation();        
         this.props.context.setContextCurrentLocation(loc);
         this.fetchAndSetWeather();
     }

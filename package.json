@@ -1,0 +1,22 @@
+{
+  "name": "WeatherApp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:thomasmathew365/WeatherApp",
+  "author": "Thomas <thomasmathew365@gmail.com>",
+  "license": "MIT",
+  "workspaces": [
+    "weatherapp_backend",
+    "weatherapp_frontend"
+  ],
+  "private": "true",
+  "proxy": "http://127.0.0.1:5000",
+  "scripts": {
+    "start": "concurrently --names \"Frontend,Backend\" -c \"bgBlue.bold,bgMagenta.bold\" \"yarn run start:frontend\" \"yarn run start:backend\"",
+    "start:frontend": "yarn workspace weatherapp_frontend start",
+    "start:backend": "yarn workspace weatherapp_backend start"
+  },
+  "dependencies": {
+    "concurrently": "^7.0.0"
+  }
+}

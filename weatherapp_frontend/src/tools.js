@@ -12,7 +12,7 @@ tools.getLocation = () => {
 
       navigator.geolocation.getCurrentPosition(success, error, options);
 
-      function success(pos) {
+      function success(pos) {        
         var lng = pos.coords.longitude;
         var lat = pos.coords.latitude;
         resolve({ lat, lng });
